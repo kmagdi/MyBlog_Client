@@ -1,0 +1,147 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+/* TopBar.js*/
+.top-img{
+  width: 40px;
+  height: 40px;
+  border-radius:50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.search-icon{
+  cursor: pointer;
+}
+/* Header.js*/
+.headerImg{
+  width: 100%;
+  height:450px;
+  object-fit: cover;
+  margin-top:80px;
+}
+.title1{
+  position: absolute;
+  
+  font-size:20px;
+}
+.title2{
+  position: absolute;
+ 
+  font-size:100px;
+}
+
+/*posts*/
+.posts, .singlePost{
+  flex:9;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.sidebar{
+  flex:3;
+  
+}
+.sidebarList{
+  list-style-type: none;
+  margin-bottom:30px;
+}
+.sidebarList li{
+  display: inline-block;
+  width: 50%;
+  margin-top:15px;
+  cursor: pointer;
+}
+/**************************************/
+.post{
+  width: 385px;
+  margin:0px 25px 40px 25px;
+}
+.postImg{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.postDescription{
+  line-height:1.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/*singlePost*/
+
+.singlePost img{
+  width: 100%;
+  object-fit:cover;
+  border-radius:5px;
+}
+/*p::first-letter{
+  font-weight: bold;
+  font-size:30px;
+  margin-left:20px;
+}*/
+.register,.login{
+  background-image: url(../public/img/intro-bg.jpg);
+  height:100vh;
+  object-fit:cover;
+}
+.login form,.register form{
+  width:300px;
+}
+.err{
+  color:red;
+  font-size:0.6rem;
+  height:2rem;
+}
+/*write*/
+
+.write .header-img{
+  height:300px;
+  object-fit: cover;
+
+}
+.files-gallery{
+  width: 80px!important;
+  height: 80px!important;
+ 
+}
+.write .postTitle{
+  max-width: 300px;
+}
+.drop-btn{
+  max-height: 35px;
+}
+.postImg img{
+  max-width:360px!important;
+ 
+}
+
+/*for responsive fonts*/
+@media screen and (max-width: 600px) {
+  h1,.title2 {
+  font-size:9vw;  
+  }
+  .title1{font-size: 2vw;}
+  h2{
+      font-size:8vw;
+  }
+ p {
+      font-size:5vw;
+  }
+  th,td{
+      font-size:3vw;
+  }
+}
+.avatar{
+  max-width: 300px;
+}
+.filter input{
+  background-color:lightblue;
+}
