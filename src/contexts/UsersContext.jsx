@@ -1,6 +1,6 @@
 import React,{createContext,useState,useEffect} from 'react';
 import axios from 'axios';
-
+const apiURL="https://myblog-9922.onrender.com"
 
 export const UsersContext = createContext();
 
@@ -11,7 +11,7 @@ export const UsersProvider = (props) => {
   },[])
 
   const fetchUsers=async () => {
-    const url='/auth/allUsers'
+    const url=apiURL+'/auth/allUsers'
     try{
       const resp=await axios.get(url)
       setUsers(resp.data)

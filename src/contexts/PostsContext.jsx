@@ -1,5 +1,7 @@
 import React,{createContext,useReducer} from 'react';
 import axios from 'axios'
+
+const apiURL="https://myblog-9922.onrender.com"
 //payload=hasznos teher
   const reducer = (state, {type,payload})=> {
     switch(type){
@@ -18,7 +20,7 @@ import axios from 'axios'
 }
 
 const delPost=async ({id,imageId}) => {
-  const resp = await axios.delete(`/posts/${id}/${imageId}`)
+  const resp = await axios.delete(apiURL+`/posts/${id}/${imageId}`)
   console.log('delPost:',resp.data)
 }
   const initState = {
@@ -34,7 +36,7 @@ export const PostsProvider = ({children}) => {
   const asyncDispatch =async () => { // adjust args to your needs
     dispatch({ type: "loading" });
     try {
-        const resp=await axios.get('/posts')
+        const resp=await axios.get(apiURL+'/posts')
         dispatch({ type: "finished", payload: resp.data });
       }catch(err){
         console.log(err)
