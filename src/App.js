@@ -21,6 +21,7 @@ import {CategProvider} from './contexts/CategContext'
 import { UserProvider } from './contexts//UserContext';
 import {AdminProvider} from './contexts/AdminContext';
 
+
 function App() {
    const [posts,setPosts]=useState([])
    const [loggedIn,setLoggedIn] = useState(false)

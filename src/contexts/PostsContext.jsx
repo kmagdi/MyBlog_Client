@@ -32,7 +32,7 @@ export const PostsContext = createContext();
 
 export const PostsProvider = ({children}) => {
   const [state,dispatch]=useReducer(reducer,initState)
-
+console.log('postprovider-ben van')
   const asyncDispatch =async () => { // adjust args to your needs
     dispatch({ type: "loading" });
     try {

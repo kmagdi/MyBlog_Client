@@ -4,7 +4,7 @@ import {Posts} from './Posts'
 import { Sidebar} from './Sidebar'
 import axios from 'axios'
 import {CategContext} from '../contexts/CategContext'
-
+const apiURL="https://myblog-9922.onrender.com"
 
 export const Home=({setPosts,posts})=> {
   const {selCateg}=useContext(CategContext)
@@ -15,7 +15,7 @@ export const Home=({setPosts,posts})=> {
 
   //console.log('admin=',admin)
   const fetchPosts=async ()=>{
-    let url= selCateg===0? '/posts':'/posts/categ/'+selCateg
+    let url= selCateg===0? apiURL+'/posts':apiURL+'/posts/categ/'+selCateg
     try {
       const resp=await axios.get(url)
       setPosts(resp.data)
