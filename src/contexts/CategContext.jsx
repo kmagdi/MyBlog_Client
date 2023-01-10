@@ -14,9 +14,9 @@ export const CategProvider = (props) => {
   },[])
 
   const fetchCateg=async () => {
-    let url='/categ'
+    let url=apiURL+'/categ'
     try{
-      const resp=await axios.get(apiURL+url)
+      const resp=await axios.get(url)
       setCateg(resp.data)
     }catch(err){
       console.log(err)

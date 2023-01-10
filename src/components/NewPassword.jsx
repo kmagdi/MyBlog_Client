@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useParams,NavLink } from 'react-router-dom'
+const apiURL="https://myblog-9922.onrender.com"
 
 export const NewPassword=()=> {
     const params=useParams()
     console.log('kliens:',params.token)
-    const url='/auth/activateNewPassword/'
+    const url=apiURL+'/auth/activateNewPassword/'
     useEffect(()=> { 
         activateNewPassword(url,params.token)
     },[])

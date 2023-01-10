@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useEffect, useState} from 'react'
 import { useForm } from 'react-hook-form';
+const apiURL="https://myblog-9922.onrender.com"
 
 export const Register=()=> {
   const [successfull,setSuccessfull]=useState(false)
@@ -23,7 +24,7 @@ export const Register=()=> {
       } = useForm();
   const onSubmit = (data) =>{
     console.log(data);
-    const url='/auth/register'
+    const url=apiURL+'/auth/register'
     sendData(url,data)
   } 
 
@@ -36,7 +37,7 @@ export const Register=()=> {
 
   const checkUsername=(e)=>{
     if(e.target.value.length>0){
-      const url='/auth/checkUsername'
+      const url=apiURL+'/auth/checkUsername'
       sendUsername(url,{"username": e.target.value})
     }
   }
@@ -47,7 +48,7 @@ export const Register=()=> {
   }
   const checkEmail=(e)=>{
     if(e.target.value.length>0){
-      const url='/auth/checkEmail'
+      const url=apiURL+'/auth/checkEmail'
       sendEmail(url,{"email": e.target.value})
     }
   }

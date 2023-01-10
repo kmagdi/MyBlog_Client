@@ -3,7 +3,7 @@ import React, { useEffect, useState,useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import emptyavatar from './avatar.svg'
 import { UserContext } from '../contexts/UserContext';
-
+const apiURL="https://myblog-9922.onrender.com"
 
 
 export const Login=({setLoggedIn})=> {
@@ -16,7 +16,7 @@ export const Login=({setLoggedIn})=> {
 
  const onSubmit = (data) =>{
     console.log(data);
-    let url='/auth/login'
+    let url=apiURL+'/auth/login'
     sendData(url,data)
   } 
 
@@ -46,7 +46,7 @@ export const Login=({setLoggedIn})=> {
   }
 
   const handleUpdatePassword=()=>{
-    let url='/auth/updatePassword'
+    let url=apiURL+'/auth/updatePassword'
     sendEmail(url,{email:typedEmail,newPassword:newPassword})
   }
 

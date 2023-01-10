@@ -5,6 +5,7 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
 
+
 export const SearchBar=({posts})=> {
     const navigate = useNavigate()
     const [wordEntered,serWordEntered]=useState('')

@@ -15,6 +15,7 @@ export const EditPost=()=> {
   const [msg,setMsg]=useState('')
   const [post,setPost]=useState({})
   const [story,setStory]=useState('')
+  const apiURL="https://myblog-9922.onrender.com"
 
   useEffect(()=>{
     setpostCateg(post.categ_id)
@@ -27,7 +28,7 @@ export const EditPost=()=> {
 
   const fetchPost = async () => {
     try {
-        const resp = await axios.get(`/posts/${params.postId}`);
+        const resp = await axios.get(apiURL+`/posts/${params.postId}`);
         console.log('válasz:',resp.data[0])
         setPost(resp.data[0])
     } catch (err) {
@@ -37,7 +38,7 @@ export const EditPost=()=> {
 
   const onSubmit = (data) => {
    console.log('adatok-kliens oldal:',data);
-   const url=`/posts/${post.id}`
+   const url=apiURL+`/posts/${post.id}`
     sendData(url,data)
     reset()
 }

@@ -8,6 +8,7 @@ import {UserContext} from '../contexts/UserContext'
 import {Story} from './Story'
 import { SpinnerCircular } from 'spinners-react';
 import {useConfirm} from 'material-ui-confirm'
+const apiURL="https://myblog-9922.onrender.com"
 
 export const Settings=({setLoggedIn})=> {
   const navigate = useNavigate()
@@ -25,18 +26,18 @@ console.log('user.avatar=',user.avatar)
     if(selFile.length>0)
         verify(selFile[0])
     else
-      sendData(`/auth/updateUserData/${user.userId}`)//ha nem cserél a felhasználó képet
+      sendData(apiURL+`/auth/updateUserData/${user.userId}`)//ha nem cserél a felhasználó képet
   } 
 
   const onDeleteSubmit=()=>{
-    let url=`/auth/deleteUserData/${user.userId}`
+    let url=apiURL+`/auth/deleteUserData/${user.userId}`
     confirm({description:`Biztosan ki szeretnéd törölni a fiokodat?`})
         .then(()=>{delUser(url)})
         .catch(()=>{console.log('confirm box hiba!')})
   }
   const verify=async (file)=>{
     const isValidImage = await validateImage(file);
-    isValidImage && sendData(`/auth/updateUserData/${user.userId}`)//amikor megvan a válasz csak akkor menjen a kérés a szerverre
+    isValidImage && sendData(apiURL+`/auth/updateUserData/${user.userId}`)//amikor megvan a válasz csak akkor menjen a kérés a szerverre
   }
   
   const sendData=async (url) =>{

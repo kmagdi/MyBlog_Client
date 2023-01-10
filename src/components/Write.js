@@ -8,6 +8,7 @@ import {CategContext} from '../contexts/CategContext'
 import {Story} from './Story'
 import {UserContext} from '../contexts/UserContext'
 import { SpinnerCircular } from 'spinners-react';
+const apiURL="https://myblog-9922.onrender.com"
 
 export const Write=()=> {
   const {user}=useContext(UserContext)
@@ -29,7 +30,7 @@ export const Write=()=> {
     console.log('verify:',file)
     const isValidImage = await validateImage(file);
     //setValidImg(isValidImage)
-    isValidImage && sendData('/posts',data)//amikor megvan a válasz csak akkor menjen a kérés a szerverre
+    isValidImage && sendData(apiURL+'/posts',data)//amikor megvan a válasz csak akkor menjen a kérés a szerverre
   }
   
   const sendData=async (url, fdata) =>{

@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 import {useConfirm} from 'material-ui-confirm'
 import parse from 'html-react-parser';
 import {UserContext} from '../contexts/UserContext'
+const apiURL="https://myblog-9922.onrender.com"
+
 
 
 export const SinglePost=({postId,imageId})=> {
@@ -14,7 +16,7 @@ export const SinglePost=({postId,imageId})=> {
   const [msg,setMsg]=useState('')
   const [loading, setLoading] = useState(false);
   //console.log('singlepost:',postId,'userId:',user.userId,'-',post.user_id)
-  const url=`/posts/${postId}`
+  const url=apiURL+`/posts/${postId}`
 
   const fetchPost=async (url)=>{
     try {
@@ -40,7 +42,7 @@ const handleDelete=()=>{
 const deletePost=async ()=>{
   console.log('delete')
   try{
-    const resp=await axios.delete(`/posts/${postId}/${imageId}`)
+    const resp=await axios.delete(apiURL+`/posts/${postId}/${imageId}`)
     setPost({})
     setMsg('Sikeres törlés!'+resp.data)
 

@@ -17,6 +17,7 @@ export const Home=({setPosts,posts})=> {
   const fetchPosts=async ()=>{
     let url= selCateg===0? apiURL+'/posts':apiURL+'/posts/categ/'+selCateg
     try {
+      console.log("home-ban:",url)
       const resp=await axios.get(url)
       setPosts(resp.data)
     }catch(err){

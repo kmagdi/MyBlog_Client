@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useParams,NavLink } from 'react-router-dom'
+const apiURL="https://myblog-9922.onrender.com"
 
 export const Welcome=()=> {
     const params=useParams()
     console.log('kliens:',params.confirmationCode)
-    const url='/auth/confirm/'
+    const url=apiURL+'/auth/confirm/'
     useEffect(()=> { 
         verifyUser(url,params.confirmationCode)
     },[])
